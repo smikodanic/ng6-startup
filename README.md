@@ -1,4 +1,4 @@
-# Ng5plusStartup
+# ng6-startup
 > Angular 6 project startup with builtin NodeJS web server and API. Quickly build and deploy any ng5 project.
 
 ## Installation
