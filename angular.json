@@ -143,6 +143,86 @@
           }
         }
       }
+    },
+    "ng6cookies": {
+      "root": "projects/ng6cookies",
+      "sourceRoot": "projects/ng6cookies/src",
+      "projectType": "library",
+      "prefix": "ng6cook",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng6cookies/tsconfig.lib.json",
+            "project": "projects/ng6cookies/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng6cookies/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng6cookies/src/test.ts",
+            "tsConfig": "projects/ng6cookies/tsconfig.spec.json",
+            "karmaConfig": "projects/ng6cookies/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng6cookies/tsconfig.lib.json",
+              "projects/ng6cookies/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "ng6auth": {
+      "root": "projects/ng6auth",
+      "sourceRoot": "projects/ng6auth/src",
+      "projectType": "library",
+      "prefix": "ng6auth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng6auth/tsconfig.lib.json",
+            "project": "projects/ng6auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/ng6auth/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng6auth/src/test.ts",
+            "tsConfig": "projects/ng6auth/tsconfig.spec.json",
+            "karmaConfig": "projects/ng6auth/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng6auth/tsconfig.lib.json",
+              "projects/ng6auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng6-startup"

@@ -1,27 +1,58 @@
-# Ng6Startup
+# Ng5plusStartup
+> Angular 6 project startup with builtin NodeJS web server and API. Quickly build and deploy any ng5 project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## Installation
+```bash
+// frontend
+$ git clone git@github.com:smikodanic/ng6-startup.git
+$ cd ./ng6-startup
+$ rm -rf .git
+$ npm install
+$ ng build ng6cookies
+$ ng build ng6uth
+$ ng serve --aot -o
 
-## Development server
+// backend
+$ cd ./ng6-plus/server
+$ npm install
+$ cd ..
+$ export MONGODB_URI="mongodb://ng5plus_user:yyyyy@5.189.161.70:27017/ng5plus-server"
+$ nodemon server  (or just $ node server)
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Features
+- integrated login
+- integrated API endpoints
+- API routes
+- API error handlers: 404 bad API URL, error sender (console, mongodb, 3rd party), uncaught errors
+- SPA (single page app) routes (Angular Router)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Server Environment variables
+- $ export NODE_ENV=development | production    (default env is development)
+- $ export MONGODB_URI="mongodb://ng5plus_user:yyyyy@5.189.161.70:27017/ng5plus-server"   (enter mongodb URI)
+- $ export NODE_RIND=true    (rebuild mongodb indexes)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## API Endpoints
+Basic API endpoints for user registration and login. See file /server/app/routes/_api.js
+```bash
+- GET / (API Info)
+- POST /users/register {first_name: , last_name: , username: , password: , role: 'admin | customer'}
+- POST /users/login {credentials admin:test123 OR customer:test123}
+- GET /users/loggedinfo (get logged user info)
+- GET /admin/test  (test admin role)
+- GET /customer/test  (test customer role)
+```
 
-## Running unit tests
+## API Test Users
+- username: 'admin' , password: 'test123' , role: 'admin'
+- username: 'customer' , password: 'test123' , role: 'customer'
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Licence
+Created by [Saša Mikodanić](http://www.mikosoft.info) under MIT licence.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Contact
+Contact for mongodb://ng5plus_user:yyyyy@5.189.161.70:27017/ng5plus-server MongoDB password [www.mikosoft.info](http://www.mikosoft.info) in oreder API to work properly.

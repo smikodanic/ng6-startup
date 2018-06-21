@@ -1,0 +1,17 @@
+{
+    "extends": "../../tslint.json",
+    "rules": {
+        "directive-selector": [
+            true,
+            "attribute",
+            "ng6cook",
+            "camelCase"
+        ],
+        "component-selector": [
+            true,
+            "element",
+            "ng6cook",
+            "kebab-case"
+        ]
+    }
+}
