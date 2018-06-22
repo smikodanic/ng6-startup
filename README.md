@@ -1,18 +1,26 @@
 # ng6-startup
-> Angular 6 project startup with builtin NodeJS web server and API. Quickly build and deploy any ng5 project.
+> Angular 6 project startup with builtin NodeJS web server and API. Quickly build and deploy any ng6 project.
 
 ## Installation
 ```bash
-// frontend
-$ git clone git@github.com:smikodanic/ng6-startup.git
-$ cd ./ng6-startup
+////// frontend
+$ git clone git@github.com:smikodanic/ng6-startup.git myproject
+$ cd ./myproject
+
 $ rm -rf .git
+$ git init
+
+$ rm -rf package-lock.json
 $ npm install
+
 $ ng build ng6cookies
 $ ng build ng6uth
-$ ng serve --aot -o
+$ npm install ./dist/ng6cookies
+$ npm install ./dist/ng6auth
 
-// backend
+$ ng serve --aot --port 7755 --open
+
+////// backend server (API)
 $ cd ./ng6-plus/server
 $ npm install
 $ cd ..

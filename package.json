@@ -21,8 +21,6 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "core-js": "^2.5.4",
-    "ng6auth": "file:dist/ng6auth",
-    "ng6cookies": "file:dist/ng6cookies",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.2.1",
     "zone.js": "^0.8.26"
